@@ -1,4 +1,5 @@
 require_relative 'LevelOne'
+require_relative 'LevelTwo'
 
 class Game
   attr_accessor :player_icon
@@ -60,5 +61,10 @@ class Game
     sleep(1)
     level_one = LevelOne.new(player_icon)
     level_one.scenario
+    print_icon
+    gets
+    puts 'Starting Level 2'
+    level_two = LevelTwo.new
+    level_two.scenario
   end
 end
