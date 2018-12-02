@@ -207,7 +207,8 @@ class LevelOne
     puts "Hagrid: Glad yeh know now. Tomorruh we\'ll get your books and supplies and get you ready to go."
     sleep(2)
     puts "The excitement is real. Soon you\'ll leave the Dursleys, soon you\'ll go to a place you\'re accepted."
-    puts 'You have completed level one! Press enter to start level 2.'
+    puts 'You have completed level one!'
+    sleep(4)
   end
 
   def bad_ending

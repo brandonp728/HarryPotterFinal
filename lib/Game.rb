@@ -1,5 +1,6 @@
 require_relative 'LevelOne'
 require_relative 'LevelTwo'
+require_relative 'LevelThree'
 
 class Game
   attr_accessor :player_icon
@@ -68,10 +69,15 @@ class Game
   def levels_in_order
     puts 'If you are stuck at any time during a level, you can always type man to see the manual.'
     start_level_one
+    puts 'If you are stuck at any time during a level, you can always type man to see the manual.'
     print_icon
     gets
-    puts 'If you are stuck at any time during a level, you can always type man to see the manual.'
     start_level_two
+    puts 'If you are stuck at any time during a level, you can always type man to see the manual.'
+    print_icon
+    gets
+    start_level_three
+    puts 'If you are stuck at any time during a level, you can always type man to see the manual.'
     print_icon
     gets
     exit(0)
@@ -106,6 +112,8 @@ class Game
       start_level_one
     when 2
       start_level_two
+    when 3
+      start_level_three
     when -1
       print_and_exit
     else
@@ -125,5 +133,12 @@ class Game
     sleep(1)
     level_two = LevelTwo.new(@player_icon)
     level_two.scenario
+  end
+
+  def start_level_three
+    puts 'Starting Level 3'
+    sleep(1)
+    level_three = LevelThree.new(@player_icon)
+    level_three.scenario
   end
 end

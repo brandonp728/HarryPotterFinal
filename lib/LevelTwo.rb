@@ -61,9 +61,8 @@ class LevelTwo
     puts 'A fang sticks out of your arm unfortunately. Without giving riddle the satisfication of a loss'
     puts 'you take the fang and stab through his diary. Ink pours out of the page and Riddle begins to disappear.'
     sleep(6)
-    puts 'You have won the level!'
-    sleep(2)
-    puts 'You have completed level 2! Press enter to go to the next level.'
+    puts 'You have completed level two!'
+    sleep(4)
   end
 
   def print_icon
