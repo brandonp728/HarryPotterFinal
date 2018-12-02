@@ -67,20 +67,21 @@ class Game
   end
 
   def levels_in_order
-    puts 'If you are stuck at any time during a level, you can always type man to see the manual.'
+    prompt_reminder
     start_level_one
-    puts 'If you are stuck at any time during a level, you can always type man to see the manual.'
-    print_icon
-    gets
+    prompt_reminder
     start_level_two
-    puts 'If you are stuck at any time during a level, you can always type man to see the manual.'
-    print_icon
-    gets
+    prompt_reminder
     start_level_three
+    prompt_reminder
+    exit(0)
+  end
+
+  def prompt_reminder
     puts 'If you are stuck at any time during a level, you can always type man to see the manual.'
+    puts 'Press Enter to continue'
     print_icon
     gets
-    exit(0)
   end
 
   def level_select
