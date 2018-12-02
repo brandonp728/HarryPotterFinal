@@ -43,16 +43,26 @@ class LevelTwo
     print_icon
     gets
     battle
+    sleep(4)
     puts 'The basilisk is weak. It has trouble merely lifting its head up.'
+    sleep(2)
     puts 'It tries to get up and slams its head against the chamber.'
-    puts 'The basilisk falls to the ground.'
+    sleep(3)
     puts 'SLAM'
+    sleep(2)
+    puts 'The basilisk falls to the ground.'
+    sleep(3)
     puts "The basilisk head lays wide open and the snake can barely move."
+    sleep(2)
     puts 'You run up and stab through the roof of its mouth.'
+    sleep(3)
     puts 'Blood spurts everywhere, but the basilisk moves no more.'
+    sleep(3)
     puts 'A fang sticks out of your arm unfortunately. Without giving riddle the satisfication of a loss'
     puts 'you take the fang and stab through his diary. Ink pours out of the page and Riddle begins to disappear.'
+    sleep(6)
     puts 'You have won the level!'
+    sleep(2)
     puts 'You have completed level 2! Press enter to go to the next level.'
   end
 
