@@ -35,6 +35,10 @@ class LevelFour
     print_icon
     gets
     third_task
+    sleep(2)
+    puts 'Congratulations! You have passed Level 4 and the Triwizard Tournament!'
+    puts 'You\'ve proven your masterful magical skills' 
+    sleep(3)
   end
 
   def print_icon
@@ -92,16 +96,107 @@ class LevelFour
     puts 'Voldemort: Imperio!'
     sleep(2)
     puts 'A voice in your head is telling you to submit to Voldemort.'
-    puts 'What do you do?'
-    print_last_commands
+    sleep(3)
+    puts 'Will you?'
+    handle_imperio
+    puts 'Voldemort: Crucio!'
+    sleep(2) 
+    puts 'You feel sharp pains everywhere, you\'re screaming for it to stop'
+    sleep(2)
+    puts 'Voldemort laughs warmly as you do so.'
+    sleep(2)
+    puts 'Voldemort: And now Harry, we will duel like true wizards.'
+    sleep(2)
+    duel
   end
 
-  def print_last_commands
+  def duel
+    print_duel_commands
+    print_icon
+    cmd = gets.chomp
+    done = false
+    until done
+      if cmd.include?('exp')
+        puts 'You: Expelliarmus!'
+        puts 'Voldemort: Avada Kedavra!'
+        sleep(2)
+        puts 'The two spells meet in the air and connect.'
+        sleep(2)
+        puts 'Suddenly a large golden web envelops you and Voldemort.'
+        sleep(2)
+        puts 'Ghosts shoot out of his wand!'
+        sleep(2)
+        puts 'An old man...'
+        sleep(2)
+        puts 'Cedric...'
+        sleep(2)
+        puts 'And...'
+        sleep(2)
+        puts 'Your parents'
+        sleep(2)
+        puts 'Ghosts: When you break the connection we will linger for a moment.'
+        puts 'Escapen then.'
+        sleep(2)
+        puts 'Cedric: And Harry, bring my body back to my parents.'
+        sleep(2)
+        puts 'You break the connection and run.'
+        sleep(2)
+        puts 'You grab Cedric\'s body and summon the cup.'
+        sleep(2)
+        puts 'You warp out of that graveyard. Leaving Voldemort and his followers behind.'
+        done = true
+      elsif cmd.include?('run')
+        puts 'You attempt to run away from the fight.'
+        sleep(2)
+        puts 'Voldemort: Avada Kedavra!'
+        sleep(2)
+        puts 'The killing curse hits you.'
+        sleep(2)
+        puts 'You have died.'
+        sleep(2)
+        puts 'Game Over'
+        exit(0)
+      elsif cmd.include?('clear')
+        clear_screen
+      else
+        puts 'Not a valid command'
+      end
+    end
+  end
+
+  def print_duel_commands
     puts "Commands \t - \t Keyword"
     puts
-    puts "Cast Expelliarmus \t\t - \t exp"
+    puts "Expelliarmus \t - \t exp"
     puts "Run \t\t - \t run"
-    puts "Clear screen \t\t - \t clear"
+    puts "Clear screen \t - \t clear"
+  end
+
+  def handle_imperio
+    puts 'Answer Y/N'
+    print_icon
+    cmd = gets.chomp
+    done = false
+    until done 
+      if cmd.downcase.include?('y')
+        puts 'You decide to join Lord Voldemort. He grabs the portkey and heads back'
+        puts 'to Hogwarts with you in tow.'
+        sleep(2)
+        puts 'You have decided to help Voldemort take over the world.'
+        sleep(2)
+        puts 'Game Over'
+        exit(0)
+      elsif cmd.downcase.include?('n')
+        puts 'You: I won\'t!'
+        sleep(2)
+        puts 'Voldemort: You won\'t?'
+        sleep(2)
+        puts 'Voldemort: Very well then.'
+        done = true
+      else
+        puts 'Not a valid command'
+      end
+    end
   end
 
   def print_hostages
@@ -119,6 +214,8 @@ class LevelFour
       if hostage.include?('ron')
         if @cho_saved && @herm_saved && @gab_saved
           puts 'You pull Gabrielle\'s body towards you as you swim to Ron.'
+          sleep(2)
+          puts 'You make quick work of Ron\'s restraints and grab him and Gabrielle.'
           sleep(2)
           puts 'There isn\'t much time left, you better hurry to the surface!'
           sleep(2)
@@ -176,7 +273,7 @@ class LevelFour
           sleep(3)
           puts 'I don\'t know if you should wait much longer'
           sleep(3)
-          puts 'It\'s nearly the of the time, you have to make a decision.'
+          puts 'It\'s nearly the end of the hour you were given for the task, you have to make a decision.'
           sleep(2)
           puts 'You undo Gabrielle\'s restraints. If Fleur can\'t make it, someone has to help.'
           sleep(2)
