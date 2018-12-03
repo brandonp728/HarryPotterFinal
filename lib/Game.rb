@@ -1,6 +1,7 @@
 require_relative 'LevelOne'
 require_relative 'LevelTwo'
 require_relative 'LevelThree'
+require_relative 'LevelFour'
 
 class Game
   attr_accessor :player_icon
@@ -74,6 +75,8 @@ class Game
     prompt_reminder
     start_level_three
     prompt_reminder
+    start_level_four
+    prompt_reminder
     exit(0)
   end
 
@@ -115,6 +118,8 @@ class Game
       start_level_two
     when 3
       start_level_three
+    when 4
+      start_level_four
     when -1
       print_and_exit
     else
@@ -141,5 +146,12 @@ class Game
     sleep(1)
     level_three = LevelThree.new(@player_icon)
     level_three.scenario
+  end
+
+  def start_level_four
+    puts 'Starting Level 4'
+    sleep(1)
+    level_four = LevelFour.new(@player_icon)
+    level_four.scenario
   end
 end
