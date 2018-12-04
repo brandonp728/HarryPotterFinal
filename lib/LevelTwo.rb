@@ -7,7 +7,7 @@ class LevelTwo
 
   def scenario
     clear_screen
-    puts "\t\t\t\t Chamber of Secrets - \tSupernatural Aid"
+    puts "\t\t\t\t Chamber of Secrets"
     puts 'You are kneeling the Chamber of Secrets. Tom Riddle has just revealed his true nature as Lord Voldemort to you.'
     puts 'Hope seems lost. Ginny is dying, Tom is standing triumphantly over you. he has procclaimed himself the greatest sorcerer of all time.'
     sleep(6)

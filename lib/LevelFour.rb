@@ -12,7 +12,7 @@ class LevelFour
 
   def scenario
     clear_screen
-    puts "\t\tGoblet of Fire \t - \t Road of Trials"
+    puts "\t\tGoblet of Fire"
     puts 'You have been selected as the surprise fourth champion in the Triwizard Tournament.'
     sleep(3)
     puts "You aren\'t sure how your name ended up in the Goblet of Fire, but you have"

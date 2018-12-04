@@ -9,9 +9,9 @@ class LevelOne
 
   def scenario
     clear_screen
-    puts "\t\t\t\t Philospher\'s Stone - \tCall to Adventure"
+    puts "\t\t\t\t Philospher\'s Stone"
     puts 'You are in a shack in the middle of the sea. There only 5 seconds left before you turn 11.'
-    puts 'Forced into leaving Privet Drive because for once in your life you got a letter.'
+    puts 'Forced into leaving Privet Drive by your aunt and uncle because for once in your life you got a letter.'
     puts 'Oh well, at least you will be a year older soon, and another year closer to leaving this house.'
     print_icon
     prompt_and_handle_command

@@ -7,7 +7,7 @@ class LevelThree
 
   def scenario
     clear_screen
-    puts "\t\t\tPrisoner of Azkaban - \tBelly of the Whale"
+    puts "\t\t\tPrisoner of Azkaban"
     puts 'You are looking out over a lake in the middle of the Forbidden Forest. You feel a chill from behind.'
     sleep(3)
     puts 'The edges of the lake start to freeze, and you turn to see Dementors swooping in from all sides.'
