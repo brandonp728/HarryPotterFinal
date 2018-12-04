@@ -88,7 +88,7 @@ class LevelThree
         puts 'Not a valid command!'
       end
       puts "You have #{tries} tries left and there are still #{dementors} dementor groups left" unless dementors.zero? || man
-      bad_ending if tries.zero?
+      bad_ending if tries.zero? && !dementors.zero?
       unless dementors.zero?
         print_icon
         cmd = gets.chomp
@@ -124,7 +124,7 @@ class LevelThree
             puts 'It attacks several of them and chases them away. Still a few more are around'
             sleep(3)
           end
-          tries -= 1
+          tries -= 1 unless dementors.zero?
         else
           puts 'But the spell failed'
           sleep(2)

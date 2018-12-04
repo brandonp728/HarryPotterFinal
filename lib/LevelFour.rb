@@ -20,24 +20,24 @@ class LevelFour
     print_icon
     gets
     first_task
-    clear_screen
     sleep(2)
+    clear_screen
     puts 'Good job on passing the first task! But now the second task has come, are you ready?'
     puts 'Press Enter to begin'
     print_icon
     gets
     second_task
-    clear_screen
     sleep(2)
+    clear_screen
     puts 'Great job on passing the second task! You\'ve shown yourself to be quite adept at these challenges.'
     puts 'The third task is your final challenge in the tournament. Are you ready?'
     puts 'Press Enter to begin'
     print_icon
     gets
     third_task
-    sleep(2)
+    sleep(3)
     puts 'Congratulations! You have passed Level 4 and the Triwizard Tournament!'
-    puts 'You\'ve proven your masterful magical skills' 
+    puts 'You\'ve proven your masterful magical skills'
     sleep(3)
   end
 
@@ -58,6 +58,7 @@ class LevelFour
     sleep(2)
     puts 'What will you do?'
     dragon_battle
+    sleep(6)
   end
 
   def second_task
@@ -71,12 +72,15 @@ class LevelFour
     puts 'But, none of the other champions have arrived yet, but you\'re worried about everyone here'
     puts 'Who will you save first?'
     save_hostages
+    sleep(6)
   end
 
   def third_task
     puts 'The third task was a maze. You didn\'t have too much trouble getting through,'
-    puts 'but you and Cedric have ended up in a strange place...'
-    sleep(2)
+    puts 'but, when you and Cedric touched the Triwizard Cup at the end, you win up in a strange place...'
+    sleep(3)
+    puts 'It appears to be a graveyard, and a headstone in front of you reads TOM RIDDLE'
+    sleep(3)
     puts 'Suddenly you hear a voice from the darkness'
     sleep(2)
     puts '???: Kill the spare'
@@ -100,7 +104,7 @@ class LevelFour
     puts 'Will you?'
     handle_imperio
     puts 'Voldemort: Crucio!'
-    sleep(2) 
+    sleep(2)
     puts 'You feel sharp pains everywhere, you\'re screaming for it to stop'
     sleep(2)
     puts 'Voldemort laughs warmly as you do so.'
@@ -108,15 +112,18 @@ class LevelFour
     puts 'Voldemort: And now Harry, we will duel like true wizards.'
     sleep(2)
     duel
+    sleep(6)
   end
 
   def duel
     print_duel_commands
-    print_icon
-    cmd = gets.chomp
     done = false
     until done
-      if cmd.include?('exp')
+      print_icon
+      cmd = gets.chomp
+      if cmd.include?('man')
+        print_duel_commands
+      elsif cmd.include?('exp')
         puts 'You: Expelliarmus!'
         puts 'Voldemort: Avada Kedavra!'
         sleep(2)
@@ -135,7 +142,7 @@ class LevelFour
         puts 'Your parents'
         sleep(2)
         puts 'Ghosts: When you break the connection we will linger for a moment.'
-        puts 'Escapen then.'
+        puts 'Escape then.'
         sleep(2)
         puts 'Cedric: And Harry, bring my body back to my parents.'
         sleep(2)
@@ -177,7 +184,7 @@ class LevelFour
     print_icon
     cmd = gets.chomp
     done = false
-    until done 
+    until done
       if cmd.downcase.include?('y')
         puts 'You decide to join Lord Voldemort. He grabs the portkey and heads back'
         puts 'to Hogwarts with you in tow.'
@@ -226,6 +233,7 @@ class LevelFour
           puts 'You feel your head breach the water! You\'ve made it!'
           sleep(2)
           puts 'You have passed the second task!'
+          sleep(4)
           break
         else
           puts 'Maybe you should make sure the other hostages are fine first.'
@@ -373,9 +381,9 @@ class LevelFour
   end
 
   def decide_accio
-    print_icon
-    cmd = gets.chomp
     loop do
+			print_icon
+	    cmd = gets.chomp
       if cmd.include?('fbolt')
         puts 'You: Accio Firebolt!'
         sleep(2)

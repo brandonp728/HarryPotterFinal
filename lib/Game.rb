@@ -63,11 +63,11 @@ class Game
     puts 'Otherwise just hit enter to start the story mode.'
     print_icon
     cmd = gets.chomp
-    level_select if cmd.include?('ls')
-    levels_in_order
+    level_select if cmd.include?('ls') || cmd.include?('1s')
+    levels_in_order(player_name)
   end
 
-  def levels_in_order
+  def levels_in_order(player_name)
     prompt_reminder
     start_level_one
     prompt_reminder
@@ -76,8 +76,7 @@ class Game
     start_level_three
     prompt_reminder
     start_level_four
-    prompt_reminder
-    exit(0)
+    ending(player_name)
   end
 
   def prompt_reminder
@@ -104,9 +103,6 @@ class Game
     puts 'Level 2 - Chamber of Secrets'
     puts 'Level 3 - Prisoner of Azkaban'
     puts 'Level 4 - Goblet of Fire'
-    puts 'Level 5 - Order of the Phoenix'
-    puts 'Level 6 - Half Blood Prince'
-    puts 'Level 7 - Dealthy Hallows'
     puts 'Enter -1 to quit'
   end
 
@@ -153,5 +149,18 @@ class Game
     sleep(1)
     level_four = LevelFour.new(@player_icon)
     level_four.scenario
+  end
+
+  def ending(player_name)
+    puts "Congratulations #{player_name}! You have completed Harry Potter the Game!"
+    sleep(2)
+    puts 'Over the course of this game you have accepted your call to adventure, fought with a monster,'
+    puts 'saved yourself, and completed a long road of trials.'
+    sleep(4)
+    puts 'Press Enter to end the game, or type ls to go the level selector.'
+    print_icon
+    cmd = gets.chomp
+    level_select if cmd.include?('ls') || cmd.include?('1s')
+    exit(0)
   end
 end
